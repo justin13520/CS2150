@@ -1,0 +1,18 @@
+Hi, all,
+
+In preparation for our final exam this Friday at 7 p.m., we have a sample exam for you to look at.  This sample exam is meant to show you how the test system works; sample exams with course material content can be found in the git repo.
+
+You can view the sample exam at https://libra.cs.virginia.edu/sample_exam/
+
+This exam, like the final, is timed.  For this sample exam you have 1 hour to complete it from when you first load that page -- so if you load it now to look at it, and then come back to complete it tomorrow, that 1 hour will have expired, and you will not have a chance to see how the system works.  This exam will no longer be active at 6:30 p.m. on Friday (30 minutes before the real final starts), so you will have to view it before then.
+
+We'll be in touch about other exam details in the next day or so.
+
+Best,
+-Aaron Bloomfield
+
+--
+Aaron Bloomfield, Professor
+Department of Computer Science, University of Virginia
+aaron (at) virginia (dot) edu
+http://www.cs.virginia.edu/~asb

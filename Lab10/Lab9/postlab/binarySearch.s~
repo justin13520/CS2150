@@ -1,0 +1,4 @@
+;Justin Liu, jl8wf 	Date:10/29/2020		Filename: binarySearch.s
+
+	global binarySearch
+	section .text

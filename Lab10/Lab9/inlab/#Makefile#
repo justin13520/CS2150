@@ -1,0 +1,16 @@
+#Justin Liu, jl8wf	Date:10/29/2020		Filename: Makefile
+
+CXX = clang 
+CXXFLAGS = -Wall
+DEBUG = -g
+
+OBJECTS = linkedlist.o
+
+a.out: $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $(OBJECTS)
+
+linkedlist.o: linkedlist.c
+
+.PHONY: clean
+clean:
+	-rm -f *.o *~

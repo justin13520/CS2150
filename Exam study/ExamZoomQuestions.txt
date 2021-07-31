@@ -1,0 +1,16 @@
+Can you provide an example of what kind of questions we can expect?
+
+Explain runtime of dikrja/prim's: e*log(v)
+
+Will there be vague questions like "How would you travel to Seattle" or was that a freebie question?
+
+In replicated (non-virtual) multiple inheritance, two parent classes share the same instance
+of a class as a parent. T or F?
+
+Dijkstra’s algorithm can be used on a graph with edges of equal weight T or F?
+Own answer: false because doesn't specify equal positive, could be equal negative
+
+What assumptions can we make about the questions and will we be able to contact TAs?
+
+When a question talks about arrays, should we read it as vector? or only the primitive
+array version where it doesn't check for boundaries, can't be set to another array, ect.?

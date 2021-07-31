@@ -1,0 +1,18 @@
+#Justin Liu, jl8wf	Date:11/14/2020 	Filename:Makefile
+CXX = clang++
+CXXFLAGS = -Wall
+DEBUG = -g
+
+OBJECTS = topological.o gNode.o
+
+a.out: $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) $(DEBUG)
+	doxygen
+
+gNode.o: gNode.h gNode.cpp
+
+topological.o: topological.cpp
+
+.PHONY: clean
+clean:
+	-rm -f *.o *

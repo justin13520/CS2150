@@ -1,0 +1,20 @@
+#Justin Liu, jl8wf	Date:10/30/2020		Filename: Makefile
+
+CXX = clang++ $(CXXFLAGS)
+CXXFLAGS = -Wall
+DEBUG = -g
+
+OBJECTS = treexinput.o threexplusone.o timer.o
+
+a.out: $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $(DEBUG)
+
+treexinput.o: treexinput.cpp
+
+threexplusone.o: treexplusone.s
+
+timer.o: timer.cpp timer.h
+
+.PHONY: clean
+clean:
+	-rm -f *.o *~

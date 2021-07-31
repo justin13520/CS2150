@@ -1,0 +1,6 @@
+//Justin Liu, jl8wf    Date: 11/08/2020     Filename: huffTree.h
+#include "huffTree.h"
+#include <iostream>
+#include <string>
+
+using namespace std;

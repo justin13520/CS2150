@@ -1,0 +1,4 @@
+/*Justin Liu, jl8wf Date:9/3/2020  Filename: lifecycle.questions.txt */
+
+1)Where does the destructor's purpose come in? The lecture for it had the audio cut out.
+2)We've seen the const keyword after a function name, but what about before? Such as in the parameter

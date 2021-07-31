@@ -1,0 +1,19 @@
+C006 000  on	 jump
+0000 001  i	 dw			int l = index
+0013 002  l	 dw			int i = length
+0001 003  one    dw			value of one
+0000 004  zero   dw			value of zero
+3000 005  3000	 dw			3000
+3002 006  loop	 load	l						accum = l
+6001 007  	 sub	i						accum = l - i
+D012 008	 jmpe	exit		if l - i = 0, stop
+3001 009	 load	i		prep i to find addr		accum = i
+5005 00A	 add	3000						accum = 3000 + i
+400C 00B	 store  loadit		store to load mem addr
+3000 00C  loadit dw							
+1800 00D	 outpH			print out mem addr				
+3001 00E	 load	i		i++				accum = i
+5003 00F	 add	one						accum = i + 1
+4001 010	 store	i						
+C006 011	 jump   loop		restart
+0000 012  exit	 halt

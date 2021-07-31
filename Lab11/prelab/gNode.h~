@@ -1,0 +1,26 @@
+//Justin Liu, jl8wf        Date:11/12/2020           Filename:gNode.h
+#ifndef GNODE_H
+#define GNODE_H
+
+#include <vector>
+
+using namespace std;
+
+class gNode{
+ public:
+  gNode();
+  gNode(string c);
+  ~gNode();
+  void addPtr(gNode* ptr);
+  void inDegreeInc();
+  void inDegreeDec();
+  vector<gNode*> getOutwardPtrs();
+  string getCourse();
+  int getInDegree();
+  void remove();
+ private:
+  string course;
+  vector<gNode*> outPtrs;
+  int inDegree;
+};
+#endif

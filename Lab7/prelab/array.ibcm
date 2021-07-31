@@ -1,0 +1,66 @@
+C00D   000    on    	jmp	start	Turn on
+0000   001    i		dw		int index = 0
+0000   002    n		dw		int n = input size			
+004A   003    a		dw		int a[i]
+0000   004    
+0000   005    zero
+0001   006    one
+4000   007    4000	dw
+3000   008    3000	dw
+0000   009
+0000   00A    exit	halt		end of program	
+0000   00B
+0000   00C
+1000   00D    start	readH		Get and store array size  accum = n
+D00A   00E    		jmpe	exit	if array size = 0, halts
+E00A   00F    		jmpl	exit	if array size < 0, halts
+4002   010    		store	n
+3001   011    loop	load	i	while(i < n)		  accum = i
+6002   012		sub	n		      		  accum = i - n
+D033   013		jmpe    fwd	Jumps to print when i==n
+3003   014		load	a	Loads array's memory addr accum = a
+5001   015		add	i	Adds index to a to store  accum = a + i
+5007   016		add	4000	Add a+i to know a[i]	  accum = a + i + 4000
+4019   017		store	a[i]		
+1000   018		readH					  accum = input
+4000   019    storeit	dw	a[i]	Input is stored at a+i
+B800   01A	      		outpH	Prints forward, piazza said this was allowed, gradescope did not :/
+3001   01B    		load	i	i++			  accum = i
+5006   01C		add	one				  accum = i + 1
+4001   01D		store	i	
+3007   01E		load	4000				  accum = 4000
+4019   01F    		store	storeit Resets storeit to 4000
+C011   020   		jump	loop
+B000   021    buffer
+3001   022    bws	load	i	i = n, not suppose to be  accum = i
+6006   023		sub     one	i--    	   	   	  accum = i - 1
+4001   024		store		i	
+3003   025    		load	a	Start of backwards print accum = a
+5001   026   		add	i	Last index of array  	 accum = a + i
+5008   027		add	3000	Gets a[i]     		 accum = a + i + 3000
+4029   028		store	loadit
+3000   029    loadit    dw		a[i] loaded		 accum = a[i]
+1800   02A		outpH	a[i]
+3001   02B		load	i	i--			 accum = i
+6006   02C		sub	one				 accum = i - 1
+4001   02D		store	i
+3008   02E		load	3000	Resets the loadit, looking back on this code, this was not necessary, but i dont want to edit :) accum = 3000
+4029   02F		store	loadit
+3001   030		load	i
+E00A   031		jmpl	exit	if i < 0, all elements should have been printed
+C025   032		jump	bws
+3005   033    fwd	load	0	reset i to 0 to print forward
+4001   034		store	i
+3001   035    fLoop	load	i	while(i < n), print forward loop  accum = i
+6002   036		sub	n		      		  accum = i - n
+D022   037		jmpe    bws	Jumps to print bws when i==n
+3003   038		load	a	Loads array's memory addr accum = a
+5001   039		add	i	Adds index to a to store  accum = a + i
+5008   03A		add	3000	Add a+i to know a[i]	  accum = a + i + 3000
+403C   03B		store
+0000   03C		dw		a[i]			  accum = a[i]
+1800   03D		outpH		prints
+3001   03E		load	i	i++			 accum = i
+5006   03F		add	one				 accum = i - 1
+4001   040		store	i
+C035   041		jump	fLoop	restart print forward loop

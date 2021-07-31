@@ -1,0 +1,22 @@
+//Justin Liu, jl8wf    Date:11/4/2020     Filename: hNode.h
+
+#ifndef HNODE_H
+#define HNODE_H
+
+#include <string>
+using namespace std;
+
+class hNode {
+public:
+    hNode();                  // Default Constructor
+  hNode(const char& val,unsigned int& fre); // Constructor
+
+private:
+    unsigned int f;
+    char value;
+    hNode* left;
+    hNode* right;
+  //friend class TreeCalc;       // gives TreeCalc access to private data
+};
+
+#endif

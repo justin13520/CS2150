@@ -1,0 +1,27 @@
+//Justin Liu, jl8wf     Date:11/15/2020        Filename:pNode.h
+#ifndef PNODE_H
+#define PNODE_H
+
+#include <vector>
+using namespace std;
+
+class pNode{
+ public:
+  pNode();
+  pNode(int puzzle[3][3]);
+  ~pNode();
+  void addToEdges(pNode* e);
+  vector<int> getState();
+  vector<pNode*> getEdges();
+  void checked();
+  bool getVisited();
+  void slideUp();
+  void slideDown();
+  void slideRight();
+  void slideLeft();
+ private:
+  vector<int> state;
+  vector<pNode*> edges;
+  bool visited;
+};
+#endif

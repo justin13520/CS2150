@@ -1,0 +1,5 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title="This is the main cpp. There should be always be a file input." alt="" coords="5,31,60,57"/>
+<area shape="rect" id="node2" href="$classgNode.html#a966ed66c6a3badb5376099d60aef6c13" title="Accessor for the string course field." alt="" coords="125,5,264,32"/>
+<area shape="rect" id="node3" href="$classgNode.html#abdd7cf19136307924017b75054a0ced4" title="Allows user to access the vector of pointers that represents the nodes the current node is point to." alt="" coords="108,56,281,83"/>
+</map>

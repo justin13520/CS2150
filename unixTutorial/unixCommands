@@ -1,0 +1,27 @@
+"ls" - list files and directories
+"ls -a" - list all files and directories
+"mkdir" - make a directory
+"cd directoryName" - changes to that directory or if empty, home directory
+"pwd" - displays the path of the current directory
+"cp file1 file2" - copies file1 and call it file 2
+"mv file1 file2" - moves or renames file1 to file2
+"rm file" - removes file
+"cat file" - displays file
+"rmdir directoryName" - removes that directory
+"less file" - displays a file a page at a time
+"head file" - displays the first few lines of a file
+"tail file" - displays the last few lines of a file
+"grep 'keyword' file" - search a file for keyword
+"wc file" - counts number of lines/words/characters in a file
+"command > file" - redirects standard output to a file
+"command >> file" - appends standard output to a file
+"command < file" - redirects the standard output from a file
+"command1 | command2" - pipe the output of command1 to the input of command2
+"cat file1 file2 > file0" - concatenate file1 and 2 to file 0
+"sort" - sorts data
+"who" - lists users currently logged in
+"*" - matches any number of characters
+"?" - matches one character
+"man command" - read the online manual page for a command
+"whatis command" - brief descrip of a command
+"apropos keyword" - matches commands with keyword in their manual pages

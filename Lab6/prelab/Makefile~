@@ -1,0 +1,18 @@
+#Justin Liu, jl8wf    Date: 10/7/2020    Filename: Makefile
+CXX = clang++ $(CXXFLAGS)
+CXXFLAGS = -Wall
+DEBUG = -g
+
+OBJECTS = wordPuzzle.o timer.o hashTable.o
+
+prelab6: $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $(DEBUG) $(OBJECTS)
+
+wordPuzzle.o: wordPuzzle.cpp
+
+timer.o: timer.h timer.cpp
+
+hashTable.o: hashTable.h hashTable.cpp
+
+.PHONY: clean
+	-rm -f *.o *~

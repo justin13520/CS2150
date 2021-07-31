@@ -1,0 +1,16 @@
+/*Justin Liu, jl8wf Date:10/19/2020  Filename: mathfun.cpp */
+#include <iostream>
+
+using namespace std;
+extern "C" long product(long x, long y);
+extern "C" long power(long x, long y);
+int main(){
+  long a, b;
+  cout << "Enter integer 1: " << endl;
+  cin >> a;
+  cout << "Enter integer 2: " << endl;
+  cin >> b;
+  cout << "Product: " << product(x,y) << endl;
+  cout << "Power: " << power(x,y) << endl;
+  return 0;
+}

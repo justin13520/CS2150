@@ -1,0 +1,32 @@
+C00A 000     start jump  begin     Beginning of code
+0000 001     a	   dw	 0	   First variable
+0000 002     b	   dw	 0	   Second variable
+0000 003     c	   dw	 0	   Third Variable
+0000 004     d	   dw	 0	   Fourth Variable, sum
+0001 005     one   dw	 1	   Value of one
+0000 006     zero  dw	 0	   Value of zero
+0000 007
+0000 008     exit
+0000 009
+1000 00A     start readH a	   Inputting value for a
+4001 00B     	   store a	   Storing Value at a, accumalator value is a
+1000 00C	   readH b	   Inputting value for b
+4002 00D	   store b	   Storing value at b, accumalator value is b
+1000 00E	   readH c	   Inputting value for c
+4003 00F	   store c	   Storing value at c, accumaltor value is c
+5001 010     sum1  add   a 	   Adding a to accum. -> accum. = c+a
+5002 011     sum2  add	 b	   Adding b to accum. -> accum. = c+a+b
+1800 012     total outpH 	   Store accum. value in d
+D019 013     if==0 jmpe  019	   Jumps to 019 if accum. (d) is 0. If not:
+C00A 014     if!=0 jump	 00A	   Jump back to 00A to take inputs again
+0000 015     buffer	 	   Buffer for between printing and if statements
+0000 016
+0000 017
+0000 018
+3001 019     loadA load  001	   Load a to accum.
+1800 01A     prntA outpH           Print a to screen as hex
+3002 01B     loadB load  002	   Load b to accum.
+1800 01C     prntB outpH 	   Print b to screen as hex
+3003 01D     loadC load	 003	   Load c to accum.
+1800 01E     prntB outpH 	   Print c to screen as hex
+C008 01F           halt		   Go to exit

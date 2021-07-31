@@ -1,0 +1,42 @@
+//Justin Liu, jl8wf     Date:11/15/2020        Filename:pNode.h
+#include "pNode.h"
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+pNode::pNode(){
+  state = vector<int>();
+  edges = vector<pNode*>();
+  visited = false;
+}
+
+pNode::pNode(vector<int> p){
+  state = p;
+  edges = vector<pNode*>();
+  visited = false;
+}
+
+pNode::~pNode(){
+
+}
+
+void pNode::addToEdges(pNode* e){
+  edges.push_back(e);
+}
+
+vector<int> pNode::getState(){
+  return state;
+}
+
+vector<pNode*> pNode::getEdges(){
+  return edges;
+}
+
+void pNode::checked(){
+  visited = true;
+}
+
+bool pNode::getVisited(){
+  return visited;
+}

@@ -1,0 +1,82 @@
+\hypertarget{middleearth_8cpp}{}\doxysection{middleearth.\+cpp File Reference}
+\label{middleearth_8cpp}\index{middleearth.cpp@{middleearth.cpp}}
+
+
+New shuffle method that uses the Mersenne Twister engine.  
+
+
+{\ttfamily \#include \char`\"{}middleearth.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for middleearth.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{middleearth_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{middleearth_8cpp_a35cf3a1047a13ce1fc444fc9fd6db3e9}{shuffle}} (vector$<$ string $>$\+::iterator first, vector$<$ string $>$\+::iterator last, mt19937 \&g)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const array$<$ string, 40 $>$ \mbox{\hyperlink{middleearth_8cpp_a0bc6d60d31f4938778c924822b423d91}{all\+\_\+city\+\_\+names}}
+\begin{DoxyCompactList}\small\item\em array of strings, size 40, initalize with variable name all\+\_\+city\+\_\+names \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+New shuffle method that uses the Mersenne Twister engine. 
+
+The cpp file of the \mbox{\hyperlink{classMiddleEarth}{Middle\+Earth}} Object.
+
+The shuffle method will take in the first and last elements of a vector of strings and shuffles the distance between the cities by using a for loop
+
+\begin{DoxyReturn}{Returns}
+Does not return anything. This fuction is a modifier. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em first} & An iterator representing the first element in a vector of strings. \\
+\hline
+{\em last} & An iterator representing the last element in a vector of strings. \\
+\hline
+{\em g} & The Mersenne-\/\+Twister random number engine. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{middleearth_8cpp_a35cf3a1047a13ce1fc444fc9fd6db3e9}\label{middleearth_8cpp_a35cf3a1047a13ce1fc444fc9fd6db3e9}} 
+\index{middleearth.cpp@{middleearth.cpp}!shuffle@{shuffle}}
+\index{shuffle@{shuffle}!middleearth.cpp@{middleearth.cpp}}
+\doxysubsubsection{\texorpdfstring{shuffle()}{shuffle()}}
+{\footnotesize\ttfamily void shuffle (\begin{DoxyParamCaption}\item[{vector$<$ string $>$\+::iterator}]{first,  }\item[{vector$<$ string $>$\+::iterator}]{last,  }\item[{mt19937 \&}]{g }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{middleearth_8cpp_a35cf3a1047a13ce1fc444fc9fd6db3e9_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{middleearth_8cpp_a0bc6d60d31f4938778c924822b423d91}\label{middleearth_8cpp_a0bc6d60d31f4938778c924822b423d91}} 
+\index{middleearth.cpp@{middleearth.cpp}!all\_city\_names@{all\_city\_names}}
+\index{all\_city\_names@{all\_city\_names}!middleearth.cpp@{middleearth.cpp}}
+\doxysubsubsection{\texorpdfstring{all\_city\_names}{all\_city\_names}}
+{\footnotesize\ttfamily const array$<$string, 40$>$ all\+\_\+city\+\_\+names}
+
+
+
+array of strings, size 40, initalize with variable name all\+\_\+city\+\_\+names 
+
+\begin{DoxyNote}{Note}
+The list of all the place names that we\textquotesingle{}ll be using. There are 40 cities/villages/towns belonging to the various races. 
+\end{DoxyNote}

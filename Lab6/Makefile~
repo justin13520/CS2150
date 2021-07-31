@@ -1,0 +1,19 @@
+#Justin Liu, jl8wf    Date: 10/7/2020    Filename: Makefile
+CXX = clang++(CXXFLAGS)
+CXXFLAGS = -Wall -02
+DEBUG = -g
+
+OBJECTS = getWordInGrid.o primenumber.o timer.o timer_test.o
+
+prelab6: $(OBJECTS)
+	$(CXX) $(DEBUG) $(OBJECTS)
+
+getWordInGrid.o: getWordInGird.cpp
+
+primenumber.o: primenumber.cpp
+
+timer.o: timer.cpp timer.h
+
+timer_test.o: timer_test.cpp
+
+.PHONY: clean

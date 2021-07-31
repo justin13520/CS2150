@@ -1,0 +1,10 @@
+8 words found
+Found all words in 0.101656 seconds
+N (2, 4):     ate
+N (3, 4):     date
+NE (4, 0):    yap
+NE (4, 4):    fed
+S (0, 4):     eta
+S (1, 4):     tad
+SW (2, 2):    pay
+W (1, 6):     cat

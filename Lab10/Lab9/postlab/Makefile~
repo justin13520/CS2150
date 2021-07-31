@@ -1,0 +1,14 @@
+#Justin Liu, jl8wf	Date:10/30/2020		Filename: Makefile
+
+CXX = clang++ $(CXXFLAGS)
+CXXFLAGS = -Wall
+DEBUG = -g
+
+OBJECTS = testBinarySearch.o timer.o binarySearch.o
+
+a.out: $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $(DEBUG)
+
+.PHONY: clean
+clean:
+	-rm -f *.o *~

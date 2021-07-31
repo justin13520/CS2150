@@ -1,0 +1,132 @@
+Spring 2020
+1) int main(){ int x = new int(5); }
+2) Organization-know what all the function are without their bodies
+   Minimize the potential for errors
+   Readability
+3) We use reference instead of pointers to modify the object/variable itself instead
+   of a copy of that object. 
+   We would use references if we didn't want the thing the reference is referring to
+   to change what it's referring. We can also use it so we can directly modify the object
+4) Deallocates s. If we try to access s after the deallocation, we would get
+   undefined behavior. 
+5) There is no operation in which doubly linked list is constant that single linked list
+   is not, so there is no such operation that exists. An operation that is constant
+   time for vector but not for the other two is accessing a "block". Vectors can use
+   the [] operator to instantly get something, while linked list have to iterate to
+   wherever the thing to look for is.
+6) Allow data structures of different types. Efficient, flexible
+7) A linked list because you can pop the front and push the back, exactly what is
+   needed for a queue
+8) To give the rules and standards of operations, 
+		IF WE HAVEN'T SEEN IT, PROBABLY DON'T NEED TO WORRY ABOUT IT?
+9) 011111011111111111111111 --> 1.1111111111111111 * 2^63 offset = 2^6 - 1 = 63
+10) Starting from the right, break the binary into 4 bit chunks and convert those to
+    their hex values. 0000 1000 = 8 -> 0x08
+11) (4 * 5^2) + (1 * 5^1) + 3 = 108/8 = 13 R 4, 13/8 = 1 R 5, 1/8 = 0 R 1,
+    413 base 5 is 554 base 8
+12) 0x0102 (little endian) --> 0x0201 (big endian) --> 0000 0010 0000 0001 = 2^9 + 2 = 258
+	0000 0001 0000 0010
+13) To get permission to modify and access the file
+14) In order for 10n to be Big Theta n, 10n = cn, 10 = c, there exists a constant 
+    where it's true, so it is in Big Theta n
+15) A pointer can point to anywhere while an array base name point solely to the
+    starting point in memory of the array ? 
+
+Fall 2019 Final
+1) Better cache allocation (spatial locality), less memory because no pointers, 
+   constant time access with [], able to use more efficient searches
+2) We would want to pass a pointer by reference so that we actually modify/update the pointer
+   we are passing in. An example of this would be the list iterator we used in lab 2
+   because we need to remember what the iterator is pointing to, not a copy that we 
+   can't access.
+3) A dangling pointer is a pointer pointing at something that was already freed. A memory leak is 
+   something that was allocated and is still there after the program terminates
+4) c, c, b, a, b
+5) bool BinarySearchTree::isIdentical(BinaryNode* a, BinaryNode* b){
+	bool identical = false;
+	if(a == nullptr && b == nullptr){
+		return true;
+	}
+	if(a->value == b->value && a->right == nullptr && a->left == nullptr && b->right == nullptr && b->left == nullptr){
+		return true;
+	}
+	if((a->right && b->right) || (a->right == nullptr && b->right == nullptr)){
+		identical = isIdentical(a->right,b->right);
+		if(!identical)
+			return false;
+	}
+	else{
+	  return false;
+	}
+
+	if((a->left && b->left) || (a->left == nullptr && b->left == nullptr)){
+		identical = isIdentical(a->left,b->left);
+		if(!identical)
+			return false;
+	}
+	else{
+	  return false;
+	}
+	return identical;
+}
+
+6) lea rax, [9*rbx+17]
+7) The activation record would contain local variables, parameters, and return address
+8) A priority queue is any data structure that can insert and delete/find min. A binary heap
+   must have an order and structure property.
+9) deadbeef --> a-1, b-1, d-2, e-3, f-1
+	T
+      /   \
+     e     T
+	 /   \
+	d     T
+	     /  \
+ 	    a    T
+	        /  \
+	       f    b	
+10)8,9,10,11,12,13,14,15
+11) Go through it normally and then recheck a shortest path. If it comes back smaller, there is
+    a negative cost. This would take n^3 time because n^2 to get the original and another n to get
+    check that path.
+12) 
+13)Dijkstra's algorithm runs in Big Theta v^2 because it has to check for each node, all of its
+   edges, which in worse case connects to every other node.
+14)Side roads->Main road->Highway->Main road->side road
+15)Rational* rptr = (Rational*)malloc(sizeof(struct Rational));
+16) A shared inheritance is when an object inherits a field from two parent classes that are the same.
+    Replicated mulitple inheritance is when an objects inherits two things that are the same, but
+    represent different things. 
+17) Pipeline character, which the output from ./a.out is inputted into tail -1
+18) Bash scripts are good running scripts of commands and bad for .
+
+Spring 2019 Final
+1) 	head.next = NULL;//compilation error, head->next = nullptr; 1
+	while(size >= 0)//logic error, while(size > 0) 2
+	nn->value = value;//compilation error, nn->value = x; 3
+	switch head->next = nn; and nn->next = head->next; // logic error 4 5
+	cur->next = cur;//logic error cur = cur->next;6
+	toDel = head->next;//compilation error, ListNode* toDel = head->next;7 
+	get rid of delete toDel because it's not a dynamically allocated pointer compilation error 8
+3) Decimal:-101
+   Hex: 0xFA Decimal -6
+   Binary: 10000000 Hex:0x80
+   Binary: 00111001 Hex: 0x39
+4)-5.25
+  00011000
+5) .25, 0 001 0000
+6) rax-return & rdi,rsi,rdx,rcx,r8,r9=parameters & r10,r11-caller saved? & rsp-register stack pointer
+   rest are callee saved?
+7)cmp rsi, rdx
+  push rdx
+  add r10,
+  mov rax, 0
+
+
+
+
+
+
+
+
+
+

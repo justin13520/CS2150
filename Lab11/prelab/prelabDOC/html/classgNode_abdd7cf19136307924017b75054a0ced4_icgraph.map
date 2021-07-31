@@ -1,0 +1,4 @@
+<map id="gNode::getOutwardPtrs" name="gNode::getOutwardPtrs">
+<area shape="rect" id="node1" title="Allows user to access the vector of pointers that represents the nodes the current node is point to." alt="" coords="108,5,281,32"/>
+<area shape="rect" id="node2" href="$topological_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="This is the main cpp. There should be always be a file input." alt="" coords="5,5,60,32"/>
+</map>

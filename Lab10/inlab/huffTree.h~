@@ -1,0 +1,18 @@
+//Justin Liu, jl8wf    Date: 11/08/2020     Filename: huffTree.h
+#ifndef HUFFTREE_H
+#define HUFFTREE_H
+
+#include "hNode.h"
+
+using namespace std;
+
+class huffTree{
+ public:
+  huffTree();
+  ~huffTree();
+  void add(string prefix, int index);
+ private:
+  
+};
+
+#endif

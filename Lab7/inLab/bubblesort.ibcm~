@@ -1,0 +1,107 @@
+C010 000	on		jump	start	Skips over dw's
+000A 001	MAX		dw		int MAX = 10
+0070 002	a   		dw		int a[], base address of array
+0000 003	i		dw		int i, index
+0000 004	j		dw		int j
+0000 005	temp		dw		int temp
+0001 006	one		dw		Value of 1
+0000 007	zero		dw		Value of 0
+3000 008	3000		dw		Value of 3000 for loadit
+4000 009	4000		dw		Value of 4000 for storeit
+0000 00A	a[j]		dw		a[j]
+0000 00B	a[j-1]		dw		a[j-1] to compare with a[j]
+0000 00C	
+0000 00D	exit		halt
+0000 00E
+0000 00F
+3003 010	loop1		load	i	while(i < n)		accum = i
+6001 011			sub	MAX			      	accum = i - n
+D023 012			jmpe	bubble	condition for full
+3002 013	StoreE		load	a   	Loads a addr		accum = a
+5003 014			add	i	a[i]    	      	accum = a + i
+5009 015			add	4000			      	accum = a + i + 4000
+4019 016			store	storeit	Stores element
+1000 017	input		readH		Reads element		accum = input
+1800 018			
+0000 019			dw		Stores at a[i]
+3003 01A			load	i	i++			accum = i
+5006 01B			add	one				accum = i + 1
+4003 01C			store	i		
+C010 01D			jump	loop1
+0000 01E					Buffer Space
+0000 01F
+0000 020
+0000 021
+0000 022
+3007 023	bubble		load	zero	reset i			accum = 0
+4003 024			store   i
+C029 025			jump	loop2	jumps over i++
+3003 026			load 	i	i++			accum = i
+5006 027			add	one				accum = i + 1
+4003 028			store   i				
+3003 029	loop2		load	i	while(i < MAX)		accum = i
+6001 02A			sub	MAX	                        accum = i - MAX
+D05B 02B			jmpe	prnt	jmp to prnt when i==MAX
+3001 02C        pre3    	load	MAX	j = MAX-1      		accum = MAX
+6006 02D			sub     one         			accum = MAX - 1
+4004 02E			store   j
+3004 02F	loop3		load	j	while(j > i)		accum = j
+6003 030			sub	i		  		accum = j - i
+D029 031	     		jmpe	loop2	jump if j == i
+3002 032 	  		load	a	if(a[j] < a[j - 1])	accum = a
+5004 033			add	j	Getting a[j-1]		accum = a + j
+5008 034			add	3000				accum = a + j + 3000
+6006 035			sub	one				accum = a + j + 3000 - 1
+4037 036			store	loadA[j-1]	
+0000 037	loadA[j-1]	dw					accum = a[j-1]
+400B 038			store	a[j-1]	Compare later with a[j]
+3002 039 	  		load	a	Getting a[j]
+5004 03A			add	j		       		accum = a + j
+5008 03B			add	3000				accum = a + j + 3000
+403D 03C			store	loadA[j]
+0000 03D	loadA[j]	dw					accum = a[j]
+400A 03E			store	Store a[j] for later
+600B 03F	if		sub	a[j] - a[j-1] = -# to switch	accum = a[j] - a[j-1]
+E049 040			jmpl	switch	if a[j] < a[j-1]
+3004 041	j--		load	j	j--			accum = j
+6006 042			sub	one				accum = j - 1
+4004 043			store	j				
+C02F 044			jump	loop3	jmp cuz a[j] !< a[j-1]
+0000 045					
+0000 046					Room for error...IF I HAD ANY OMEGALUL
+0000 047					Hope you had a laugh grading this
+0000 048
+300A 049	switch		load	a[j]				accum = a[j]
+4005 04A	setTemp		store	temp	Store to switch
+3002 04B 	  		load	a	Getting a[j] to switch	accum = a
+5004 04C			add	j	             		accum = a + j
+5009 04D			add	4000				accum = a + j + 4000
+4050 04E			store	set1	a[j]=a[j-1]
+300B 04F			load	a[j-1]				accum = a[j-1]
+0000 050	set1   		dw		Stores a[j-1] at a[j]	
+3002 051 	  		load	a	Getting a[j-1] addr to	accum = a
+5004 052			add	j	store temp   		accum = a + j
+5009 053			add	4000				accum = a + j + 4000
+6006 054			sub	one				accum = a + j + 4000 - 1
+4057 055			store	set2
+3005 056			load	temp				accum = temp
+0000 057	set2		dw		a[j-1] = temp
+C02F 058			jump	   	switch finished
+0000 059					Buffer Space
+0000 05A
+0000 05B
+0000 05C
+3007 05D	prnt		load	zero	reset i			accum = 0
+4003 05E			store 	i
+3003 05F	loop4		load	i	if(i < MAX)		accum = i
+6001 060			sub	MAX	i - MAX			accum = i - MAX
+D00D 061			jmpe	exit	i == MAX
+3002 062			load	a	Getting a[i]		accum = a
+5003 063			add	i				accum = a + i
+5008 064			add	3000				accum = a + i + 3000
+4066 065			store	e
+0000 066	e		dw		a[i]			accum = a[i]
+1800 067			outpH		prints a[i]
+3003 068			load	i	i++			accum = i
+5006 069			add	one				accum = i + 1
+C05F 06A			jump	loop4	restarts print loop

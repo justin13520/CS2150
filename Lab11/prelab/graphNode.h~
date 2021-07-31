@@ -1,0 +1,14 @@
+//Justin Liu, jl8wf        Date:11/12/2020           Filename:graph.h
+#ifndef GRAPHNODE_H
+#define GRAPHNODE_H
+
+
+using namespace std;
+
+class graphNode{
+ public:
+  
+ private:
+
+};
+#endif
